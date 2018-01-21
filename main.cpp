@@ -20,7 +20,7 @@ int main(int argc, char *argv[]) {
         }
 
         DecafParser parser(&tokens);
-        antlr4::tree::ParseTree *tree;
+        antlr4::tree::ParseTree *tree = parser.stored_definition();
 
         std::cout << tree->toStringTree(&parser) << std::endl;
 
