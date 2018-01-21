@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include "antlr4-cpp-runtime/runtime/src/antlr4-runtime.h"
+#include "antlr4-cpp-runtime/antlr4-runtime/antlr4-runtime.h"
 #include "Lexer-Parser/DecafLexer.h"
 #include "Lexer-Parser/DecafParser.h"
 
@@ -20,7 +20,7 @@ int main(int argc, char *argv[]) {
         }
 
         DecafParser parser(&tokens);
-        antlr4::tree::ParseTree *tree = parser.stored_definition();
+        antlr4::tree::ParseTree *tree = parser.program();
 
         std::cout << tree->toStringTree(&parser) << std::endl;
 
